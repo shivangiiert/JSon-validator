@@ -11,9 +11,9 @@ public class start
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		 a=br.readLine();
 		
-		 System.out.println(a+""+a.length());
+		 
 		 a=a.replaceAll("\\s","");
-		 System.out.println(a+""+a.length());
+		 
 		k=value();
 		if(k==1)
 			System.out.println("VALID");
@@ -33,11 +33,9 @@ public class start
 				k=object();
 				break;
 			case '"':
-				System.out.println("jii");
 				k=string();
 				break;
 			case '[':
-				System.out.println("hii");
 				k=array();
 				break;
 			case 't':
@@ -54,7 +52,6 @@ public class start
 			case '7':
 			case '8':
 			case '9':
-				System.out.println("kkkkkkkkkkkopi");
 				k=number();
 				break;
 			default:
@@ -62,7 +59,6 @@ public class start
 				
 			}
 		}
-		System.out.println("value returned"+k);
 		return k;
 	}
 	static int object()
@@ -70,10 +66,9 @@ public class start
 		k=0;
 		k=property(); 
 		
-		System.out.println("k="+k+"i="+i);
 		while(function()==1 )
 		{
-			System.out.println("kllll");
+			
 			if(a.charAt(i)==',')
 			{
 			k=property();
@@ -89,13 +84,12 @@ public class start
 			k=1;
 		else
 			k=0;
-		System.out.println("Object returned"+k);	
-		System.out.println(a.charAt(i));
+		
 		return k;
 	}
 	static int  property()
 	{
-		System.out.println(a.charAt(i+1));
+		
 		if(function()==1) {
 		k=string();
 		if(k==1)
@@ -111,7 +105,7 @@ public class start
 					
 					k=value();
 					
-					System.out.println("k=="+k);
+					
 					
 				}
 				else
@@ -121,7 +115,7 @@ public class start
 			
 		}
 		}
-		System.out.println("Property returned"+k);
+		
 		return k;
 		
 		
@@ -137,17 +131,17 @@ public class start
 			k=1;
 			
 		}
-		System.out.println("Function returned"+k);
+		
 		return k;
 	}
 	static int array()
 	{
-		System.out.println("Hell"+ch);
+		
 		k=0;
 		k=value();
 		while(function()==1 )
 		{
-			System.out.println("kllll"+a.charAt(i));
+			
 			if(a.charAt(i)==',')
 			{
 			k=value();
@@ -163,7 +157,7 @@ public class start
 			k=1;
 		else
 			k=0;
-		System.out.println("Array returned"+k);
+		
 		return k;
 	}
 	
@@ -179,17 +173,17 @@ public class start
 	{
 		k=0;
 		
-			System.out.println("jii"+i);
+			
 			if(a.charAt(i)=='"')
 			{
-				System.out.println("jii");
+				
 				while( function()==1 && a.charAt(i)!='"');
 				
 				if(a.charAt(i)=='"')
 					k=1;
 					
 			}
-			System.out.println("String returned"+k);
+			
 		return k;
 	}
 	
@@ -231,13 +225,13 @@ public class start
 			}
 			 else if(!Character.isDigit(a.charAt(i)))
 				{
-			System.out.println(a.charAt(i)+"ihj");
+			
 					k=0;
 					break;
 					
 				}
 		}
-		System.out.println(k+"jiip"+a.charAt(i));
+		
 		return k;
 	}
 	
